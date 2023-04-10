@@ -1,11 +1,11 @@
-package com.haw.srs.customerservice;
+package com.haw.srs.customerservice.customer;
 
 import lombok.EqualsAndHashCode;
 import lombok.Value;
 
 @Value
 @EqualsAndHashCode(callSuper=false)
-class CustomerNotFoundException extends Exception {
+public class CustomerNotFoundException extends Exception {
 
     private final Long customerId;
     private final String lastName;

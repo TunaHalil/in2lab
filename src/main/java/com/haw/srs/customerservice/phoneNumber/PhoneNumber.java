@@ -1,4 +1,4 @@
-package com.haw.srs.customerservice;
+package com.haw.srs.customerservice.phoneNumber;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

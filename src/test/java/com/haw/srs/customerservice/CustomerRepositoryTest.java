@@ -1,5 +1,8 @@
 package com.haw.srs.customerservice;
 
+import com.haw.srs.customerservice.customer.Customer;
+import com.haw.srs.customerservice.customer.CustomerRepository;
+import com.haw.srs.customerservice.phoneNumber.PhoneNumber;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;

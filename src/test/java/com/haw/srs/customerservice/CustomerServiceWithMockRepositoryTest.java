@@ -1,5 +1,8 @@
 package com.haw.srs.customerservice;
 
+import com.haw.srs.customerservice.customer.Customer;
+import com.haw.srs.customerservice.customer.CustomerRepository;
+import com.haw.srs.customerservice.customer.CustomerService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.haw.srs.customerservice;
+package com.haw.srs.customerservice.customer;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;

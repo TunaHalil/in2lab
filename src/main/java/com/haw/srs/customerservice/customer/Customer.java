@@ -1,5 +1,8 @@
-package com.haw.srs.customerservice;
+package com.haw.srs.customerservice.customer;
 
+import com.haw.srs.customerservice.Gender;
+import com.haw.srs.customerservice.phoneNumber.PhoneNumber;
+import com.haw.srs.customerservice.reservation.Reservation;
 import lombok.*;
 
 import javax.persistence.*;

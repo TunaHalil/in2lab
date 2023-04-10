@@ -1,5 +1,12 @@
 package com.haw.srs.customerservice;
 
+import com.haw.srs.customerservice.customer.Customer;
+import com.haw.srs.customerservice.customer.CustomerNotFoundException;
+import com.haw.srs.customerservice.customer.CustomerRepository;
+import com.haw.srs.customerservice.customer.CustomerService;
+import com.haw.srs.customerservice.reservation.Reservation;
+import com.haw.srs.customerservice.movie.Movie;
+import com.haw.srs.customerservice.movie.MovieService;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +29,9 @@ class CustomerServiceTest {
     @Autowired
     private CustomerRepository realCustomerRepository;
 
+    @Autowired
+    private MovieService movieService;
+
     @Test
     void getAllCustomersSuccess() {
 
@@ -40,9 +50,14 @@ class CustomerServiceTest {
 
         realCustomerRepository.deleteAll();
 
+        Movie jamesbond = new Movie("James Bond 007", 120);
+        Movie rosamundepilcher = new Movie("Rosamunde Pilcher", 120);
+        movieService.save(jamesbond);
+        movieService.save(rosamundepilcher);
+
         Customer from = new Customer("John", "Smith", Gender.MALE);
-        from.addReservation(new Reservation("James Bond 007"));
-        from.addReservation(new Reservation("Rosamunde Pilcher"));
+        from.addReservation(new Reservation(jamesbond));
+        from.addReservation(new Reservation(rosamundepilcher));
         realCustomerRepository.save(from);
         Customer to = new Customer("Eva", "Miller", Gender.FEMALE);
         realCustomerRepository.save(to);

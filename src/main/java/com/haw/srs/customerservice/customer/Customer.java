@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Data
+@Data //generiert automatisch Standardmethoden wie Getter, Setter, toString, equals
 @AllArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class Customer {

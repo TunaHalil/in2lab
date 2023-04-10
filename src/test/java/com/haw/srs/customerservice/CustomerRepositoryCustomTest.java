@@ -2,6 +2,8 @@ package com.haw.srs.customerservice;
 
 import com.haw.srs.customerservice.customer.Customer;
 import com.haw.srs.customerservice.customer.CustomerRepository;
+import com.haw.srs.customerservice.movie.Movie;
+import com.haw.srs.customerservice.movie.MovieService;
 import com.haw.srs.customerservice.reservation.Reservation;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -23,6 +25,9 @@ class CustomerRepositoryCustomTest {
     @Autowired
     private CustomerRepository customerRepository;
 
+    @Autowired
+    MovieService movieService;
+
     @BeforeEach
     void setUp() {
         this.customerRepository.deleteAll();
@@ -36,7 +41,9 @@ class CustomerRepositoryCustomTest {
         customerRepository.save(customer);
         customer = customerRepository.save(new Customer("Jane", "Doe", Gender.FEMALE,
                 "jane.doe@mail.com",null));
-        Reservation reservation = new Reservation("James Bond 007");
+
+        Movie movie = new Movie("John Wick", 120);
+        Reservation reservation = new Reservation(movie);
         customer.addReservation(reservation);
         customerRepository.save(customer);
 
